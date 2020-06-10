@@ -1,0 +1,37 @@
+{% extends 'base_layout.html' %}
+
+
+
+{% block content %}
+<h1>signup</h1>
+
+<form class = 'site-form' action ="/account/signup/" method="post">
+       {% csrf_token %}
+
+        {{form.username.label}}
+        {{form.username}}
+    <p>
+
+    {{form.password1.label}}
+          {{form.password1}}
+
+    </p>
+     <p>
+
+    {{form.password2.label}}
+          {{form.password2}}
+
+    </p>
+
+<!--{{form.as_p}}-->
+
+
+<!--    {% for field in form%}-->
+<!--        {{field.label}}-->
+<!--    {{field}}-->
+
+<!--    {% endfor %}-->
+
+    <input type="submit" value="Signup">
+</form>
+{% endblock %}

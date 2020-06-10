@@ -1,0 +1,28 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+<h1>This is the Article main page</h1>
+
+<div class=" articles ">
+    {% for article in articles %}
+        <div class="article">
+            <p> *********************************</p>
+            <a href="{% url 'articles:detail' slug=article.slug %}" >{{article.title}}</a>
+
+
+            </h2>
+
+
+            <p>{{article.snippit}}</p>
+
+
+
+            <p><img src="{{article.thum.url}}" height="60" width="200"></p>
+  {{article.date}}
+        </div>
+
+    {% endfor%}
+
+</div>
+{% endblock %}
